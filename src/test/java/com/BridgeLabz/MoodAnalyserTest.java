@@ -5,6 +5,11 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 public class MoodAnalyserTest
 {
     @Test
@@ -23,6 +28,13 @@ public class MoodAnalyserTest
     public void Given_Message_When_Happy_Should_Return_Happy() {
         MoodAnalyser moodAnalyser= new MoodAnalyser();
         String mood = moodAnalyser.AnalyseMood("This is a Happy Message");
+        Assert.assertEquals("HAPPY", mood);
+    }
+
+    @Test
+    public void Given_Message_When_Null_Should_Return_Happy() {
+        MoodAnalyser moodAnalyser= new MoodAnalyser();
+        String mood = moodAnalyser.AnalyseMood(null);
         Assert.assertEquals("HAPPY", mood);
     }
 }
